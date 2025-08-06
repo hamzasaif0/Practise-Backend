@@ -18,7 +18,9 @@ import fs from 'fs';
       const uploadResult1 = await cloudinary.uploader.upload(file, {
                resource_type:"auto",
            } )
-          console.log("File is upload is Sucessfully",uploadResult1.url)
+
+        //   console.log("File is upload is Sucessfully",uploadResult1.url)
+         fs.unlinkSync(file);
   return uploadResult1;
         }
         catch(error){

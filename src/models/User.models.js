@@ -31,7 +31,7 @@ required:true,
 },
 coverimage:{
      type:String,  
-required:true,
+
 },
 watchhistory:[
     {
