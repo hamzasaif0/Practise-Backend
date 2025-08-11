@@ -33,7 +33,7 @@ router.route("/currentuser").get(verifyjwt, currentUser);
 router.route("/updateuser").patch(verifyjwt, updateUser);
 router
   .route("/updateavatar")
-  .post(verifyjwt, upload.single("avatar"), updateAvatar);
+  .patch(verifyjwt, upload.single("avatar"), updateAvatar);
 router
   .route("/updatecoverimage")
   .patch(verifyjwt, upload.single("coverimage"), updateCoverimage);

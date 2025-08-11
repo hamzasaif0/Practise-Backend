@@ -3,6 +3,7 @@ import ApiError from "../utils/ApiError.js";
 import { User } from "../models/User.models.js";
 import uploadfile from "../utils/cloudinary.js";
 import ApiResponse from "../utils/APiresponse.js";
+import mongoose from "mongoose";
 import jwt from "jsonwebtoken";
 const genrateAccessandRefreshToken = async (userid) => {
   try {
@@ -114,8 +115,8 @@ const logoutuser = asyncHandler(async (req, res) => {
   await User.findByIdAndUpdate(
     req.user._id,
     {
-      $set: {
-        refreshtoken: undefined,
+      $unset: {
+        refreshtoken: 1,
       },
     },
     {
