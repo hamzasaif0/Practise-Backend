@@ -1,11 +1,11 @@
-import { Comment } from "../models/Comment.models";
-import { Like } from "../models/Like.models";
-import { Tweet } from "../models/Tweet.models";
-import { Video } from "../models/Vedios.model";
-import ApiError from "../utils/ApiError";
-import ApiResponse from "../utils/APiresponse";
+import { Comment } from "../models/Comment.models.js";
+import { Like } from "../models/Like.models.js";
+import { Tweet } from "../models/Tweet.models.js";
+import { Video } from "../models/Vedios.model.js";
+import ApiError from "../utils/ApiError.js";
+import ApiResponse from "../utils/APiresponse.js";
 import mongoose,{ Types } from "mongoose";
-
+import asyncHandler from "../utils/asyncHandler.js";
 
 const togglevedioLike = asyncHandler(async (req, res) => {
     const { videoId } = req.params;
